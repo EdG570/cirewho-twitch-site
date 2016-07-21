@@ -1,0 +1,122 @@
+/* ================================= 
+  Base Styles
+==================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Varela Round', sans-serif;
+  letter-spacing: 1px;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+
+p {
+  font-size: .95em;
+  margin-bottom: 1.5em;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5,
+a {
+  font-family: 'Lato', sans-serif;
+}
+
+h2,
+h3 {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  color: #2EC3E8;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  display: inline-block;
+}
+
+/* ================================= 
+  Base Layout Styles
+==================================== */
+
+/* ---- Navigation ---- */
+nav {
+  background-color: #333;
+  padding: 1em;
+  text-align: center;
+}
+
+nav h1 {
+  margin-top: 0;
+  color: #2EC3E8;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  font-weight: 300;
+  display: none;
+}
+
+nav a {
+  font-size: 1.2em;
+  margin-right: 1em;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.light {
+  font-weight: 100;
+}
+
+/* ---- About ---- */
+
+/* ---- Schedule ---- */
+
+/* ---- Contact ---- */
+
+/* ---- Layout Containers ---- */
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media screen and (min-width: 768px) {
+  nav ul {
+    display: inline-block;
+    float: right;
+  }
+
+  nav h1 {
+    float: left;
+  }
+
+  .clearfix::after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
