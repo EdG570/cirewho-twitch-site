@@ -7,13 +7,13 @@
 }
 
 body {
-  font-family: 'Varela Round', sans-serif;
   letter-spacing: 1px;
   line-height: 1.6;
   color: #3a3a3a;
 }
 
 p {
+  font-family: 'Merriweather', serif;
   font-size: .95em;
   margin-bottom: 1.5em;
 }
@@ -64,9 +64,18 @@ nav {
 }
 
 nav h1 {
-  margin-top: 0;
+  margin: 0;
   color: #2EC3E8;
   letter-spacing: 2px;
+}
+
+nav h2 {
+  font-weight: 200;
+  padding-bottom: 0.25em;
+  display: inline-block;
+  color: #fff;
+  border-bottom: 1px solid #2EC3E8;
+  cursor: pointer;
 }
 
 nav ul {
@@ -74,9 +83,56 @@ nav ul {
   display: none;
 }
 
+nav ul > li {
+  margin-right: 2em;
+}
+
 nav a {
   font-size: 1.2em;
-  margin-right: 1em;
+  transition: border-bottom 0.5s ease;
+}
+
+nav a:hover {
+  border-bottom: 1px solid #2EC3E8;  
+  padding-bottom: 0.5em;
+}
+
+.menu-dropdown {
+  display: block;
+  opacity: 1;
+  height: 100%;
+  transition: all 1s ease;
+}
+
+.display-hide{
+  display: none;
+  opacity: 0;
+  height: 0;
+}
+
+.menu-dropdown > ul {
+  display: block;
+}
+
+.menu-dropdown > ul > li {
+  margin: 0;
+  display: block;
+  border-bottom: 1px solid #2EC3E8;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.menu-dropdown > ul > li:last-child {
+  border: none;
+}
+
+.menu-dropdown a {
+  transition: color 0.5s ease;
+}
+
+.menu-dropdown a:hover {
+  border: none;
+  color: #2EC3E8;
 }
 
 .bold {
@@ -93,11 +149,36 @@ nav a {
 
 /* ---- Contact ---- */
 
+/* ---- Footer ---- */
+
+footer {
+  text-align: center;
+  background-color: #333;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  color: #777;
+}
+
+footer p {
+  margin: 0;
+  font-weight: 300;
+  font-size: 0.85em;
+}
+
+footer p:first-child {
+  margin-bottom: 0.5em;
+}
+
 /* ---- Layout Containers ---- */
 
 .container {
   width: 70%;
+  max-width: 1250px;
   margin: 0 auto;
+}
+
+.wrap {
+  min-height: calc(100vh - 120px);
 }
 
 /* ================================= 
@@ -112,6 +193,10 @@ nav a {
 
   nav h1 {
     float: left;
+  }
+
+  nav h2 {
+    display: none;
   }
 
   .clearfix::after {

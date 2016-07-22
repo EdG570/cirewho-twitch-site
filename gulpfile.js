@@ -5,6 +5,9 @@ var uglify = require('gulp-uglify');
 var gulpIf = require('gulp-if');
 var cssnano = require('gulp-cssnano');
 var imagemin = require('gulp-imagemin');
+var cache = require('gulp-cache');
+var del = require('del');
+var runSequence = require('run-sequence');
 
 gulp.task('browserSync', function() {
   browserSync.init({
@@ -28,7 +31,19 @@ gulp.task('useref', function() {
     .pipe(gulp.dest('dist'));
 });
 
+gulp.task('images', function() {
+  return gulp.src('app/images/**/*.+(png|jpg|jpeg|gif|svg)')
+    .pipe(cache(imagemin()))
+    .pipe(gulp.dest('dist/images'));
+});
 
+gulp.task('clean:dist', function() {
+  return del.sync('dist');
+});
+
+gulp.task('build', function(callback) {
+  runSequence('clean:dist', ['useref', 'images'], callback);
+});
 
 
 

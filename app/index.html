@@ -6,30 +6,45 @@
   <title>Cirewho Twitch Website</title>
   
   <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,900' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300' rel='stylesheet' type='text/css'>
   <!-- build:css css/styles.min.css -->
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/styles.css">
   <!-- endbuild -->
 </head>
 <body>
-  <nav>
-    <div class="container clearfix">
-      <h1><span class="bold">Cire</span><span class="light">who</span></h1>
-
-      <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Schedule</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-  <header></header>
-  <section>
-    <section id="about"></section>
-    <section id="schedule"></section>
-  </section>
-  <section id="contact"></section>
-  <footer></footer>
+  <div class="wrap">
+    <nav>
+      <div class="container clearfix">
+        <h1><span class="bold">Cire</span><span class="light">who</span></h1>
+        <h2 id="menu">Menu</h2>
+        <div class="menu-dropdown display-hide">
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Schedule</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <ul id="main-nav">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Schedule</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <header></header>
+    <section>
+      <section id="about"></section>
+      <section id="schedule"></section>
+    </section>
+    <section id="contact"></section>
+  </div>
+    <footer>
+      <div id="main-footer">
+        <p>Copyright © 2016 Cirewho - All rights reserved</p>
+        <p>Design & Development by Ed Glazenski</p>
+      </div>
+    </footer>
 
   <!-- build:js js/main.min.js -->
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.js"></script>
