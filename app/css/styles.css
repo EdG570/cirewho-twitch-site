@@ -9,6 +9,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 body {
@@ -26,9 +27,9 @@ video {
 }
 
 p {
-  font-family: 'Merriweather', serif;
   font-size: .95em;
   margin-bottom: 1.5em;
+  font-weight: 200;
 }
 
 h1, 
@@ -65,11 +66,19 @@ ul li {
   display: inline-block;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 /* ================================= 
   Base Layout Styles
 ==================================== */
 
 /* ---- Navigation ---- */
+
 nav {
   background-color: #333;
   padding: 1em;
@@ -103,6 +112,8 @@ nav ul > li {
 nav a {
   font-size: 1.2em;
   transition: border-bottom 0.5s ease;
+  font-weight: 200;
+  letter-spacing: 2px;
 }
 
 nav a:hover {
@@ -113,11 +124,10 @@ nav a:hover {
 .menu-dropdown {
   display: block;
   opacity: 1;
-  height: 100%;
   transition: all 1s ease;
 }
 
-.display-hide{
+.display-hide { 
   display: none;
   opacity: 0;
   height: 0;
@@ -160,9 +170,110 @@ nav a:hover {
 
 /* ---- About ---- */
 
+#about p {
+  max-width: 485px;
+}
+
 /* ---- Schedule ---- */
 
-/* ---- Contact ---- */
+/* ------- Contact ------- */
+
+#contact {
+  background-color: #2EC3E8;
+  padding: 3em 0;
+  color: #fff;
+}
+
+#contact h1 {
+  text-align: center;
+  margin-top: 0;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+#contact h3,
+#contact h1 {
+  color: #fff;
+}
+
+#contact h3 {
+  font-weight: 300;
+}
+
+.input-container {
+  width: 100%;
+}
+
+.contact-intro {
+  max-width: 425px;
+  margin: 0 auto;
+}
+
+button {
+  display: block;
+  box-shadow: none;
+  background-color: #F5A623;
+  color: #fff;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.form-group,
+.text-group,
+ button {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+.text-group {
+  margin-bottom: 1em;
+}
+
+.input-container .form-group {
+  margin-bottom: 1em;
+}
+
+input,
+label,
+textarea {
+  width: 100%;
+}
+
+input,
+button,
+textarea {
+  border-radius: 10px;
+  border: none;
+}
+
+input,
+button {
+  height: 48px;
+}
+
+label {
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+input,
+textarea {
+  margin-top: 0.15em;
+}
+
+input,
+textarea {
+  padding-left: 0.75em;
+  padding-bottom: 0.2em;
+}
+
+textarea {
+  padding-top: 0.5em;
+  height: 145px;
+}
 
 /* ---- Footer ---- */
 
@@ -177,11 +288,26 @@ footer {
 footer p {
   margin: 0;
   font-weight: 300;
-  font-size: 0.85em;
+  font-size: 1em;
 }
 
-footer p:first-child {
-  margin-bottom: 0.5em;
+footer p:last-child {
+  margin-top: 0.6em;
+}
+
+footer img {
+  width: 42px;
+}
+
+footer li {
+  margin-right: 1em;
+  margin-left: 1em;
+  transition: all 0.5s ease;
+}
+
+footer li:hover {
+  border-bottom: 1px solid #2EC3E8;
+  
 }
 
 /* ---- Layout Containers ---- */
@@ -190,10 +316,6 @@ footer p:first-child {
   width: 70%;
   max-width: 1250px;
   margin: 0 auto;
-}
-
-.wrap {
-  min-height: calc(100vh - 120px);
 }
 
 /* ------- Twitch API ------- */
@@ -225,6 +347,23 @@ footer p:first-child {
 ==================================== */
 
 @media screen and (min-width: 768px) {
+
+  .wrap {
+    min-height: calc(100vh - 120px);
+  }
+
+  body {
+    margin-top: 94px;
+  }
+
+  nav {
+    position: fixed;
+    box-shadow: 0 1px 4px #000;
+    z-index: 999;
+    top: 0;
+    width: 100%;
+  }
+
   nav ul {
     display: inline-block;
     float: right;
@@ -259,10 +398,54 @@ footer p:first-child {
   .status-online {
     top: 0.4em;
   }
+
+  .about-content,
+  .schedule-content {
+    width: 50%;
+    float: left;
+  }
+
+  .about-content p {
+    max-width: 450px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 900px) {
   nav ul > li {
     margin-right: 1em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contact-intro,
+  form {
+    float: left;
+  }
+
+  .contact-intro {
+    width: 35%;
+    padding-top: 1.9em;
+  }
+
+  form {
+    width: 65%;
+    padding-left: 1em;
+  }
+
+  .input-container,
+  .text-group {
+    float: left;
+    width: 50%;
+  }
+
+  .text-group {
+    margin-left: 1em;
+  }
+
+  form button {
+    clear: both;
+    float: left;
+    margin-left: 0.9em;
+    margin-top: 0.5em;
   }
 }

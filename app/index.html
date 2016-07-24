@@ -37,13 +37,52 @@
       <h2></h2>
     </header>
     <section>
-      <section id="about"></section>
-      <section id="schedule"></section>
+      <section id="about-schedule">
+        <div class="container clearfix">
+          <div class="about-content">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ducimus nemo quos mollitia iste incidunt, vitae explicabo repellendus ex consequatur deleniti, ipsam quas magni minus eaque reiciendis, hic at. Atque!</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet a cupiditate error quos, ducimus quisquam. Quasi dolore eligendi autem, culpa debitis, tenetur, sapiente ex distinctio, laboriosam ut deserunt mollitia dolorum.</p>
+          </div>
+        <div class="schedule-content">
+          <p>hi</p>
+        </div>
+      </div>
+      </section>
     </section>
-    <section id="contact"></section>
+    <section id="contact">
+      <div class="container clearfix">
+        <h1>Contact Us</h1>
+        <div class="contact-intro">
+          <h3>Feel free to drop us a message regarding the stream or if you'd just like to say hello. Thank you for your support!</h3>
+        </div>
+        <form action="mailer.php" method="post" class="clearfix">
+          <div class="input-container">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="user_name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="mail">Email:</label>
+              <input type="email" id="mail" name="user_email" placeholder="Your email" required>
+            </div>
+          </div>
+          <div class="text-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="user_message" placeholder="Type your message here..." required></textarea>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </section>
   </div>
     <footer>
       <div id="main-footer">
+        <ul>
+          <li><a href="#"><img src="images/twitter.png" alt="Twitter"></a></li>
+          <li><a href="#"><img src="images/youtube.png" alt="Youtube"></a></li>
+          <li><a href="#"><img src="images/facebook.png" alt="Facebook"></a></li>
+        </ul>
         <p>Copyright © 2016 Cirewho - All rights reserved</p>
         <p>Design & Development by Ed Glazenski</p>
       </div>
