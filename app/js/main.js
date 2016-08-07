@@ -5,12 +5,16 @@ $(document).ready(function() {
     $(this).next('div').toggleClass('display-hide');
   }); 
 
+  $('body').animate({
+    opacity: 1
+  }, 1500);
+
   /* ---------------------------------------------
   --------------- TWITCH API REQUEST -------------
   --------------------------------------------- */
 
   // Checks if stream is online or offline then makes appropriate function calls
-  $.getJSON("https://api.twitch.tv/kraken/streams/cirewho?callback=?")
+  $.getJSON("https://api.twitch.tv/kraken/streams/steel_tv?callback=?")
     .done(function(data) {
       if(data.error) {
         $('#status').text("Unknown");
@@ -33,14 +37,13 @@ $(document).ready(function() {
   var offline = function() {
     $('#status').addClass('status-offline');
     $('#status').text('is OFFLINE');
-    $('#hrs').text('0');
-    $('#mins').text('0');
-    $('#game').text(' -- ');
+    $('#title').text('CIREWHO is currently OFFLINE. Check out the link below to watch past streams.');
   };
 
   var online = function() {
     $('#status').addClass('status-online');
     $('#status').text('ONLINE');
+    $('#header-status').text('LIVE');
   };
 
   var streamStartTime = function(startTime) {
@@ -87,7 +90,7 @@ $(document).ready(function() {
   };
 
   var displayCurrentGame = function(game) {
-    $('#game').text(game);
+    $('#header-game').text(game);
   }; 
 
   // -------------- End Twitch API -------------------
