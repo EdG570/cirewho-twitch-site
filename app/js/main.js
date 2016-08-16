@@ -1,20 +1,42 @@
 $(document).ready(function() {
 
-  // Toggles nav menu dropdown
+  // Toggles hidden class for nav dropdown menu
   $('#menu').on('click', function() {
-    $(this).next('div').toggleClass('display-hide');
-  }); 
+    $(this).next('div').slideToggle('slow');
+  });
 
+  // Animates opacity on page load
   $('body').animate({
     opacity: 1
   }, 1500);
+
+  // Nav links scrolling animations
+  $("#main-nav").on('click', function(e) {
+    animateScroll(e);
+  });
+
+  $(".menu-dropdown").on('click', function(e) {
+    animateScroll(e);
+  });
+
+  function animateScroll(e) {
+    if (e.target.text === 'About' || e.target.text === 'Schedule') {
+      $('html, body').animate({
+        scrollTop: $("#about-schedule").offset().top
+      }, 2000);
+    } else if (e.target.text === 'Contact') {
+      $('html, body').animate({
+        scrollTop: $("#contact").offset().top
+      }, 2000);
+    }
+  }
 
   /* ---------------------------------------------
   --------------- TWITCH API REQUEST -------------
   --------------------------------------------- */
 
   // Checks if stream is online or offline then makes appropriate function calls
-  $.getJSON("https://api.twitch.tv/kraken/streams/steel_tv?callback=?")
+  $.getJSON("https://api.twitch.tv/kraken/streams/sxyhxy?callback=?")
     .done(function(data) {
       if(data.error) {
         $('#status').text("Unknown");
@@ -42,7 +64,7 @@ $(document).ready(function() {
 
   var online = function() {
     $('#status').addClass('status-online');
-    $('#status').text('ONLINE');
+    $('#status').text('is LIVE');
     $('#header-status').text('LIVE');
   };
 
@@ -94,4 +116,9 @@ $(document).ready(function() {
   }; 
 
   // -------------- End Twitch API -------------------
+
+  // Contact form validation from formvalidation.js
+  if (!$('body').hasClass('thanks')) {
+    validateForm();
+  }
 });

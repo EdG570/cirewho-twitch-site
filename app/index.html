@@ -13,13 +13,12 @@
   <!-- endbuild -->
 </head>
 <body>
-  <div class="wrap">
     <nav>
       <div class="container clearfix">
         <h1><span class="bold">CIRE</span><span class="light">WHO</span></h1>
         <span id="status"></span>
         <h2 id="menu">Menu</h2>
-        <div class="menu-dropdown display-hide">
+        <div class="menu-dropdown hidden">
           <ul>
             <li><a href="#">About</a></li>
             <li><a href="#">Schedule</a></li>
@@ -36,22 +35,63 @@
     <header>
       <div class="container">
         <img src="images/logo.svg" alt="cirewho brand logo">
-        <h1 id="title">CIREWHO is currently <span id="header-status"></span>, playing <span id="header-game"></span>. The stream has been live for <span id="hrs"></span> hrs and <span id="mins"></span> mins.</h1>
+        <h1 id="title">Welcome, landlubbers and sea salts alike, to the CIREWHO twitch stream extravaganza.</h1>
         <a class="button" href="#" target="_blank">View Twitch Stream</a>
       </div>
     </header>
+    <section id="stream-details">
+      <h3>Current Stream Status: <span id="header-status"></span> Game: <span id="header-game"></span> Stream Uptime: <span id="hrs"></span> hour(s) <span id="mins"></span> minutes</h3>
+    </section>
     <section>
       <section id="about-schedule">
         <div class="container clearfix">
           <div class="about-content">
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut ducimus nemo quos mollitia iste incidunt, vitae explicabo repellendus ex consequatur deleniti, ipsam quas magni minus eaque reiciendis, hic at. Atque!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet a cupiditate error quos, ducimus quisquam. Quasi dolore eligendi autem, culpa debitis, tenetur, sapiente ex distinctio, laboriosam ut deserunt mollitia dolorum.</p>
+            <h2>About us</h2>
+            <p>Fayye and Cirewho make up this married couple stream duo. Sharing their love for gaming is their main goal. Join them in their adventures. Share some laughs, tell some stories, and maybe watch them rage. Either way, it's sure to be a good time!</p>
+            <p>Fayye and CIREWHO started their gaming experience together in Rift. Raiding for a few months before moving on to other games. Eventually they moved on to games like: H1Z1, Rust, Wildstar, World of Warcraft and Overwatch.</p>
           </div>
-        <div class="schedule-content">
-          <p>hi</p>
+          <div class="twitter">
+            <h2>Twitter News</h2>
+            <a class="twitter-timeline" data-width="300" data-height="340" data-theme="light" href="https://twitter.com/cirewho">Tweets by Cirewho</a> 
+          </div>
+          <div class="schedule-content">
+            <h2>Stream Schedule</h2>
+            <table>
+              <tr>
+                <th>Day</th>
+                <th>Time</th>
+              </tr>
+              <tr>
+                <td class="schedule-day">Sunday</td>
+                <td class="schedule-times">7pm - 11pm EST</td>
+              </tr>
+              <tr>
+                <td class="schedule-day">Monday</td>
+                <td class="schedule-times">Off</td>
+              </tr>
+              <tr>
+                <td class="schedule-day">Tuesday</td>
+                <td class="schedule-times">Off</td>
+              </tr>
+              <tr>
+                <td class="schedule-day">Wednesday</td>
+                <td class="schedule-times">7pm - 11pm EST</td>
+              </tr>
+              <tr>
+                <td class="schedule-day">Thursday</td>
+                <td class="schedule-times">7pm - 11pm EST</td>
+              </tr>
+              <tr>
+                <td class="schedule-day">Friday</td>
+                <td class="schedule-times">7pm - 11pm EST</td>
+              </tr>
+              <tr>
+                <td class="schedule-day">Saturday</td>
+                <td class="schedule-times">7pm - 11pm EST</td>
+              </tr>
+            </table>
+          </div>
         </div>
-      </div>
       </section>
     </section>
     <section id="contact">
@@ -60,26 +100,32 @@
         <div class="contact-intro">
           <h3>Feel free to drop us a message regarding the stream or if you'd just like to say hello. Thank you for your support!</h3>
         </div>
-        <form action="mailer.php" method="post" class="clearfix">
+        <form action="mailer.php" method="post" class="clearfix" id="form">
           <div class="input-container">
             <div class="form-group">
-              <label for="name">Name:</label>
-              <input type="text" id="name" name="user_name" placeholder="Your name" required>
+              <label for="name">First name:</label>
+              <span id="fnError" class="error-msg"></span>
+              <input type="text" id="first-name" name="userFirstName" placeholder="Your first name..." required>
+            </div>
+            <div class="form-group">
+              <label for="name">Last name:</label>
+              <span id="lnError" class="error-msg"></span>
+              <input type="text" id="last-name" name="userLastName" placeholder="Your last name...">
             </div>
             <div class="form-group">
               <label for="mail">Email:</label>
-              <input type="email" id="mail" name="user_email" placeholder="Your email" required>
+              <span id="emError" class="error-msg"></span>
+              <input type="email" id="mail" name="user_email" placeholder="Your email..." required>
             </div>
           </div>
           <div class="text-group">
             <label for="message">Message:</label>
             <textarea id="message" name="user_message" placeholder="Type your message here..." required></textarea>
           </div>
-          <button type="submit">Send</button>
+          <button name="formButton" type="submit">Send</button>
         </form>
       </div>
     </section>
-  </div>
     <footer>
       <div id="main-footer">
         <ul>
@@ -94,7 +140,9 @@
 
   <!-- build:js js/main.min.js -->
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/formvalidation.js"></script>    
     <script type="text/javascript" src="js/main.js"></script>
   <!-- endbuild -->
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
